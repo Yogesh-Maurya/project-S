@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from 'react-router-dom';
 
 const Navbar = () => {
   const [searchQuery, setSearchQuery] = useState("");
@@ -29,7 +30,7 @@ const Navbar = () => {
       </button>
 
       <div style={styles.leftSection}>
-        <div style={styles.logo}>Desi 🔧Fix</div>
+        <div style={styles.logo}>Desi🔧FixIn</div>
         
         <div style={{
           ...styles.navGroup,
@@ -43,10 +44,10 @@ const Navbar = () => {
             <i className="fas fa-comments" style={styles.icon}></i>
             <span style={styles.buttonText}>Discussion</span>
           </button>
-          <button style={styles.uploadButton} onClick={handleUpload}>
+          <Link to="/upload" className="nav-link" style={styles.uploadButton}>
             <i className="fas fa-upload" style={styles.icon}></i>
             <span style={styles.buttonText}>Upload</span>
-          </button>
+          </Link>
           <button style={styles.contactButton} onClick={handleContactClick}>
             <i className="fas fa-envelope" style={styles.icon}></i>
             <span style={styles.buttonText}>Contact</span>
