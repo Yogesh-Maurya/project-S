@@ -4,7 +4,7 @@ const YouTubeVideo = () => {
   return (
     <div style={styles.videoContainer}>
       <div style={styles.header}>
-        <h3 style={styles.title}>Educational Video Tutorial</h3>
+        <h3 style={styles.title}>Desi Video Tutorial</h3>
         <div style={styles.videoStats}>
           <span style={styles.statItem}>▶️ 1.2K views</span>
           <span style={styles.statItem}>📅 2 days ago</span>
@@ -15,7 +15,7 @@ const YouTubeVideo = () => {
         <iframe
           width="100%"
           height="100%"
-          src="https://www.youtube.com/embed/czMUlsMduyE"
+          src="https://www.youtube.com/embed/1fDRLFCc2l4"
           title="YouTube video player"
           frameBorder="0"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
@@ -59,20 +59,20 @@ const YouTubeVideo = () => {
 const styles = {
   videoContainer: {
     flex: 1,
-    padding: "24px",
+    padding: "80px",
     display: "flex",
     flexDirection: "column",
-    gap: "20px",
+    gap: "2px",
     backgroundColor: "#ffffff",
     borderRadius: "16px",
     boxShadow: "0 8px 30px rgba(0, 0, 0, 0.08)",
-    maxWidth: "800px",
-    margin: "24px auto",
+    maxWidth: "100%",
+    margin: "16px auto",
   },
   header: {
     display: "flex",
     flexDirection: "column",
-    gap: "8px",
+    gap: "10px",
     paddingBottom: "16px",
     borderBottom: "2px solid #f0f2f5",
   },
@@ -188,6 +188,9 @@ const styles = {
   },
   icon: {
     fontSize: "14px",
+    background: "linear-gradient(45deg, #ff6b6b, #f06595)",
+    WebkitBackgroundClip: "text",
+    WebkitTextFillColor: "transparent",
   },
 };
 

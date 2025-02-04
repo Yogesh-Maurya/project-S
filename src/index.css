@@ -24,6 +24,9 @@ a:hover {
 
 body {
   margin: 0;
+  font-family: "Arial", sans-serif;
+  background-color: #1a202c; /* Dark background */
+  color: #e2e8f0; /* Light text color */
   display: flex;
   place-items: center;
   min-width: 320px;
@@ -44,7 +47,7 @@ button {
   font-family: inherit;
   background-color: #1a1a1a;
   cursor: pointer;
-  transition: border-color 0.25s;
+  transition: background-color 0.3s ease;
 }
 button:hover {
   border-color: #646cff;
@@ -65,4 +68,23 @@ button:focus-visible {
   button {
     background-color: #f9f9f9;
   }
+}
+
+input,
+textarea {
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+input:focus,
+textarea:focus {
+  box-shadow: 0 0 0 3px rgba(66, 153, 225, 0.5); /* Blue focus ring */
+}
+
+a {
+  color: #3182ce; /* Link color */
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
 }

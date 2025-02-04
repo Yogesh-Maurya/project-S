@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
   const [searchQuery, setSearchQuery] = useState("");
@@ -21,7 +22,7 @@ const Navbar = () => {
   return (
     <nav style={styles.navbar}>
       {/* Mobile menu button */}
-      <button 
+      <button
         style={styles.mobileMenuButton}
         onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
       >
@@ -29,27 +30,44 @@ const Navbar = () => {
       </button>
 
       <div style={styles.leftSection}>
-        <div style={styles.logo}>Desi 🔧Fix</div>
-        
-        <div style={{
-          ...styles.navGroup,
-          ...(isMobileMenuOpen ? styles.navGroupMobileOpen : styles.navGroupMobileClosed)
-        }}>
-          <button style={styles.navButton}>
+        <div style={styles.logo}>Desi🔧FixIn</div>
+
+        <div
+          style={{
+            ...styles.navGroup,
+            ...(isMobileMenuOpen
+              ? styles.navGroupMobileOpen
+              : styles.navGroupMobileClosed),
+          }}
+        >
+          <Link to="/" className="nav-link" style={styles.navButton}>
             <i className="fas fa-home" style={styles.icon}></i>
             <span style={styles.buttonText}>Home</span>
-          </button>
-          <button style={styles.navButton}>
+          </Link>
+          <Link to="/discussion" className="nav-link" style={styles.navButton}>
             <i className="fas fa-comments" style={styles.icon}></i>
             <span style={styles.buttonText}>Discussion</span>
-          </button>
-          <button style={styles.uploadButton} onClick={handleUpload}>
+          </Link>
+          <Link to="/upload" className="nav-link" style={styles.uploadButton}>
             <i className="fas fa-upload" style={styles.icon}></i>
             <span style={styles.buttonText}>Upload</span>
+          </Link>
+          <button style={styles.contactButton}>
+            <Link
+              to="/contact"
+              style={{ color: "inherit", textDecoration: "none" }}
+            >
+              <i className="fas fa-envelope" style={styles.icon}></i>
+              <span style={styles.buttonText}>Contact</span>
+            </Link>
           </button>
-          <button style={styles.contactButton} onClick={handleContactClick}>
-            <i className="fas fa-envelope" style={styles.icon}></i>
-            <span style={styles.buttonText}>Contact</span>
+          <button style={styles.signupButton}>
+            <Link
+              to="/signup"
+              style={{ color: "inherit", textDecoration: "none" }}
+            >
+              Signup
+            </Link>
           </button>
         </div>
       </div>
@@ -74,18 +92,21 @@ const Navbar = () => {
         </div>
 
         <div style={styles.profileContainer}>
-          <button 
-            style={styles.profileButton} 
+          <button
+            style={styles.profileButton}
             onClick={() => setIsProfileOpen(!isProfileOpen)}
           >
             <i className="fas fa-user" style={styles.icon}></i>
             <i className="fas fa-chevron-down" style={styles.icon}></i>
           </button>
-          
+
           {isProfileOpen && (
             <div style={styles.dropdown}>
               <button style={styles.dropdownItem}>
-                <i className="fas fa-user-circle" style={styles.dropdownIcon}></i>
+                <i
+                  className="fas fa-user-circle"
+                  style={styles.dropdownIcon}
+                ></i>
                 Profile
               </button>
               <button style={styles.dropdownItem}>
@@ -94,7 +115,10 @@ const Navbar = () => {
               </button>
               <div style={styles.dropdownDivider} />
               <button style={styles.dropdownItem}>
-                <i className="fas fa-sign-out-alt" style={styles.dropdownIcon}></i>
+                <i
+                  className="fas fa-sign-out-alt"
+                  style={styles.dropdownIcon}
+                ></i>
                 Logout
               </button>
             </div>
@@ -115,7 +139,7 @@ const styles = {
     top: 0,
     left: 0,
     right: 0,
-    background: "linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%)",
+    background: "linear-gradient(135deg, #6a11cb 0%, #2575fc 100%)",
     zIndex: 1000,
     boxShadow: "0 4px 20px rgba(0, 0, 0, 0.15)",
     minHeight: "60px",
@@ -203,11 +227,16 @@ const styles = {
     "@media (max-width: 768px)": {
       width: "100%",
     },
+    "&:hover": {
+      background: "rgba(255, 255, 255, 0.3)",
+      transform: "scale(1.1)",
+      transition: "transform 0.3s ease, background 0.3s ease",
+    },
   },
   uploadButton: {
     padding: "8px 16px",
     border: "none",
-    background: "linear-gradient(45deg, #4f46e5, #6366f1)",
+    background: "linear-gradient(45deg, #43cea2, #185a9d)",
     color: "#fff",
     borderRadius: "8px",
     cursor: "pointer",
@@ -221,6 +250,11 @@ const styles = {
     whiteSpace: "nowrap",
     "@media (max-width: 768px)": {
       width: "100%",
+    },
+    "&:hover": {
+      background: "linear-gradient(45deg, #185a9d, #43cea2)",
+      transform: "scale(1.1)",
+      transition: "transform 0.3s ease, background 0.3s ease",
     },
   },
   searchContainer: {
@@ -265,6 +299,11 @@ const styles = {
     fontSize: "14px",
     transition: "all 0.3s ease",
     whiteSpace: "nowrap",
+    "&:hover": {
+      background: "rgba(255, 255, 255, 0.3)",
+      transform: "scale(1.1)",
+      transition: "transform 0.3s ease, background 0.3s ease",
+    },
   },
   contactButton: {
     padding: "8px 16px",
@@ -283,6 +322,11 @@ const styles = {
     "@media (max-width: 768px)": {
       width: "100%",
     },
+    "&:hover": {
+      background: "rgba(255, 255, 255, 0.3)",
+      transform: "scale(1.1)",
+      transition: "transform 0.3s ease, background 0.3s ease",
+    },
   },
   profileContainer: {
     position: "relative",
@@ -299,6 +343,11 @@ const styles = {
     color: "#fff",
     cursor: "pointer",
     transition: "all 0.3s ease",
+    "&:hover": {
+      background: "rgba(255, 255, 255, 0.3)",
+      transform: "scale(1.1)",
+      transition: "transform 0.3s ease, background 0.3s ease",
+    },
   },
   dropdown: {
     position: "absolute",
@@ -336,6 +385,10 @@ const styles = {
   },
   icon: {
     fontSize: "16px",
+    transition: "transform 0.3s ease",
+    "&:hover": {
+      transform: "rotate(360deg)",
+    },
   },
   dropdownIcon: {
     fontSize: "14px",
@@ -347,6 +400,29 @@ const styles = {
     },
     "@media (max-width: 768px)": {
       display: "inline",
+    },
+  },
+  signupButton: {
+    padding: "8px 16px",
+    border: "none",
+    background: "transparent",
+    color: "#fff",
+    borderRadius: "8px",
+    cursor: "pointer",
+    fontWeight: "600",
+    fontSize: "14px",
+    transition: "all 0.3s ease",
+    display: "flex",
+    alignItems: "center",
+    gap: "8px",
+    whiteSpace: "nowrap",
+    "@media (max-width: 768px)": {
+      width: "100%",
+    },
+    "&:hover": {
+      background: "rgba(255, 255, 255, 0.3)",
+      transform: "scale(1.1)",
+      transition: "transform 0.3s ease, background 0.3s ease",
     },
   },
 };

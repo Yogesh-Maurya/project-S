@@ -1,0 +1,71 @@
+.playlist-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 300px; /* Corrected padding value */
+  margin-top: -220px;
+  color: #fff;
+  min-height: 100vh;
+  box-sizing: border-box;
+  text-align: center; /* Ensures text is centered within the container */
+}
+
+.playlist-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 150%;
+  max-width: 400px;
+  box-sizing: border-box;
+}
+
+.playlist-form label {
+  margin-top: 1px;
+}
+
+.playlist-form input,
+.playlist-form textarea {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  width: 90%;
+  box-sizing: border-box;
+}
+
+.playlist-form textarea {
+  resize: none;
+}
+
+.video-section {
+  border: 1px solid #444;
+  padding: 5px;
+  border-radius: 5px;
+  background-color: #2a2a3e;
+}
+
+.add-video-button,
+.submit-playlist-button,
+.remove-video-button {
+  background-color: #000;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  margin-top: 10px;
+}
+
+.add-video-button:hover,
+.submit-playlist-button:hover {
+  background-color: #333;
+}
+
+.remove-video-button {
+  background-color: #ff4d4d;
+}
+
+.remove-video-button:hover {
+  background-color: #ff1a1a;
+}
