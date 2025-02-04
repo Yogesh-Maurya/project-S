@@ -7,9 +7,8 @@ import UploadPage from "./pages/UploadPage";
 import CreatePlaylistPage from "./pages/CreatePlaylistPage";
 import Footer from "./components/Footer";
 import DiscussionPage from "./pages/DiscussionPage";
-import SignupPage from "./pages/SignupPage";
 import ContactPage from "./components/ContactPage";
-import "./SignupPage.css";
+import SignupPage from "./pages/SignupPage";
 
 const App = () => {
   return (
@@ -28,8 +27,8 @@ const App = () => {
         <Route path="/upload" element={<UploadPage />} />
         <Route path="/create-playlist" element={<CreatePlaylistPage />} />
         <Route path="/discussion" element={<DiscussionPage />} />
-        <Route path="/signup" element={<SignupPage />} />
         <Route path="/contact" element={<ContactPage />} />
+        <Route path="/signup" element={<SignupPage />} />
       </Routes>
       <Footer />
     </div>
